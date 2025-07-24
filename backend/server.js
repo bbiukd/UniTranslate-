@@ -9,7 +9,7 @@ const translationRouter = require('./routes/translation');
 
 // Middleware
 server.use(express.json());
-server.use(cors());
+server.use(cors({ origin: 'https://uni-translate.vercel.app' }));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/unitranslate')
