@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const server = express();
 const port = process.env.PORT || 5000;
@@ -8,6 +9,7 @@ const translationRouter = require('./routes/translation');
 
 // Middleware
 server.use(express.json());
+server.use(cors());
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/unitranslate')
